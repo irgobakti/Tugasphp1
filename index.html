@@ -1,0 +1,113 @@
+<?php
+// Variable portfolio
+$nama = "Irgo Satria Bakti";
+$judul = "Web Developer";
+$email = "Irgo@example.com";
+$alamat = "Bogor Raya";
+$telepon = "+62 123 4567 890";
+
+// Navbar
+$navbar = '
+<nav id="navbar">
+    <div class="container">
+        <h1 class="logo">' . $nama . '</h1>
+        <ul class="menu">
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>';
+
+// Header
+$header = '
+<header>
+    <h2>' . $judul . '</h2>
+</header>';
+
+// Portfolio
+$portfolio = '
+<section id="portfolio">
+    <h2>My Portfolio</h2>
+    <p>Welcome to my portfolio. Below are some of the projects I have worked on.</p>
+    <div class="projects">
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of Project 1</p>
+            <img src="project1.jpg" alt="Project 1">
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of Project 2</p>
+            <img src="project2.jpg" alt="Project 2">
+        </div>
+        <div class="project">
+            <h3>Project 3</h3>
+            <p>Description of Project 3</p>
+            <img src="project3.jpg" alt="Project 3">
+        </div>
+    </div>
+</section>';
+
+// Contact
+$contact = '
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you\'re interested in working with me, please contact me.</p>
+    <ul>
+        <li>Email: ' . $email . '</li>
+        <li>Phone: ' . $telepon . '</li>
+        <li>Address: ' . $alamat . '</li>
+    </ul>
+</section>';
+
+// Footer
+$footer = '
+<footer>
+    <p>&copy; ' . date("Y") . ' ' . $nama . ' Portfolio</p>
+</footer>';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <?php echo $navbar; ?>
+
+    <?php echo $header; ?>
+
+    <?php echo $portfolio; ?>
+
+    <?php echo $contact; ?>
+
+    <?php echo $footer; ?>
+
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
